@@ -7,7 +7,17 @@
          $uname = $_POST['uname'];
          $cell = $_POST['cell'];
          $photo = $_FILES['photo'];
-         $photo_name = move($photo);
+
+        /*
+        * How To use Move Function
+        * 1st argument is photo file name
+        * 2nd argument is Photo move File directory name
+        * move($photo,$file)
+        * unique Photo Name
+        * Move File
+        */
+
+         $photo_name = move($photo,'student');
          $student->InsertStudent($name,$email,$uname,$cell,$photo_name);
 
     }

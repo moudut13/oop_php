@@ -3,6 +3,9 @@
 <?php
     $user = new User;
     $student = new Student;
+    $teacher = new Teacher;
+    $staff = new Staff;
+
     if (isset($_GET['user_view'])){
         $id = $_GET['user_view'];
         $data = $user->SingleDataView($id);
@@ -16,6 +19,19 @@
         $file = "student";
 
     }
+    if (isset($_GET['teacher_view'])){
+        $id = $_GET['teacher_view'];
+        $data = $teacher->SingleDataView($id);
+        $row = $data->fetch_object();
+        $file = "teacher";
+    }
+    if (isset($_GET['staff_id'])){
+        $id = $_GET['staff_id'];
+        $data = $staff->SingleDataView($id,);
+        $row = $data->fetch_object();
+        $file = 'staff';
+    }
+
 ?>
 
     <div class="wrap-table col-md-4 shadow">

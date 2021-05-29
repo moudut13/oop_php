@@ -14,20 +14,35 @@ class Student extends database{
         parent::create($sql);
     }
 
+    /*
+     * All Data Show
+     */
     public function AllDataShow(){
         return parent::all('student');
     }
 
+    /*
+     * Single Data Delete
+     */
     public function DataDelete($id,$photo_id){
         unlink('assets/media/student/'.$photo_id);
         parent::delete('student',$id);
         header('location:student.php');
     }
 
+    /*
+     * Single Data View
+     *
+     */
     public function SingleDataView($id){
         return parent::SingleData('student',$id);
     }
 
+
+    /*
+     * sSingle Data Edit
+     * 
+     */
     public function SingleDataEdit($name,$email,$cell,$uname,$id){
         parent::update($name,$email,$cell,$uname,$id,'student');
         header('location:student.php');

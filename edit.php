@@ -3,6 +3,8 @@
 <?php
     $user = new User;
     $student = new Student;
+    $teacher = new Teacher;
+    $staff = new Staff;
     if (isset($_GET['user_edit'])){
         $id = $_GET['user_edit'];
         $data = $user->SingleDataView($id);
@@ -29,6 +31,35 @@
             $uname = strtolower($_POST['username']);
             $student->SingleDataEdit($name,$email,$cell,$uname,$id);
         }
+    }
+
+    if (isset($_GET['teacher_edit'])){
+        $id = $_GET['teacher_edit'];
+        $data = $teacher->SingleDataView($id);
+        $row = $data->fetch_object();
+
+        if (isset($_POST['update'])){
+            $name =  ucwords(strtolower($_POST['name']));
+            $email = strtolower($_POST['email']);
+            $cell = $_POST['cell'];
+            $uname = strtolower($_POST['username']);
+            $teacher->SingleDataEdit($name,$email,$cell,$uname,$id);
+        }
+    }
+
+    if (isset($_GET['staff_id'])){
+        $id = $_GET['staff_id'];
+        $data = $staff->SingleDataView($id);
+        $row= $data->fetch_object();
+
+        if (isset($_POST['update'])){
+            $name =  ucwords(strtolower($_POST['name']));
+            $email = strtolower($_POST['email']);
+            $cell = $_POST['cell'];
+            $uname = strtolower($_POST['username']);
+            $staff->SingleDataEdit($name,$email,$cell,$uname,$id);
+        }
+
     }
 ?>
 

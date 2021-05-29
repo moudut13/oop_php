@@ -7,4 +7,20 @@
             "role": "Developer"
         }
     ]
+},
+{
+    "license": [
+       "LGPL-2.1-only",
+       "GPL-3.0-or-later"
+    ]
+},
+{
+    "packages": {
+        "package-name": {
+            "dev-master": { @composer.json },
+            "1.0.x-dev": { @composer.json },
+            "0.0.1": { @composer.json },
+            "1.0.0": { @composer.json }
+        }
+    }
 }

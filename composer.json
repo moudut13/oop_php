@@ -1,6 +1,0 @@
-{
-    "repositories": [
-        {"type": "composer", "url": "https://repo.packagist.com/sa-research-lab/"},
-        {"packagist.org": false}
-    ]
-}

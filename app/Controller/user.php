@@ -48,6 +48,12 @@ class User extends database{
         header('location:user.php');
     }
 
+    /*
+     * Mini Search Box
+     */
+    public function Search($search){
+       return parent:: Like($search,'user');
+    }
 
 
 

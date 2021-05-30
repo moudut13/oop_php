@@ -13,6 +13,19 @@
         }
 
     ?>
+
+    <!--Start Search Box
+    <div class="col-md-4 d-block m-auto">
+        <form class="form-inline float-right">
+            <div class="form-group mx-sm-3">
+                <input type="search" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <div class="clearfix"></div>
+    </div>
+    End Search Box-->
+
 	<div class="wrap shadow">
 		<div class="card">
 			<div class="card-body">

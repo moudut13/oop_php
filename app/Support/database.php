@@ -76,6 +76,13 @@ abstract class Database{
     protected function orWhere(){
 
     }
+
+    /*
+     * Like Function
+     */
+    protected function Like($search,$table){
+        return $this->connect()->query("SELECT * FROM $table WHERE name LIKE '%$search%' OR username LIKE '%$search%' OR email LIKE '%$search%'");
+    }
     
 
 }

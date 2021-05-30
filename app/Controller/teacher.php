@@ -45,6 +45,12 @@ class Teacher extends database{
         header('location:teacher.php');
     }
 
+    /*
+     * Mini Search Box
+     */
+    public function Search($search){
+        return parent:: Like($search,'teacher');
+    }
 
 
 }

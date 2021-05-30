@@ -48,6 +48,12 @@ class Student extends database{
         header('location:student.php');
     }
 
+    /*
+     *
+     */
+    public function Search($search){
+        return parent:: Like($search,'student');
+    }
 
 
 

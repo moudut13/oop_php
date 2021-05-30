@@ -27,15 +27,36 @@
         $student->DataDelete($id,$photo_id);
     }
 
+
 ?>
 
 
 	<div class="wrap-table shadow">
 		<div class="card">
 			<div class="card-body">
-                <h2 class="float-left">Student Data</h2>
-                <a class="float-right btn btn-primary" data-toggle="modal" href="#add_model">Add Student</a>
-                <span class="clearfix"></span>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="float-left">
+                            <h2>Student Data</h2>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-primary d-inline" data-toggle="modal" href="#add_model">Add Student</a>
+                        </div>
+                        <span class="clearfix"></span>
+                    </div>
+                    <div class="col-md-12">
+                        <form class="form-inline float-right" action="" method="GET">
+                            <div class="form-group mx-sm-3">
+                                <input type="search" class="form-control" name="search" placeholder="Search" value="<?php if (isset($_GET['search'])){echo $_GET['search'];}?>">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Search" name="submit">
+                            </div>
+                        </form>
+                        <div class="clearfix"></div>
+                        <br>
+                    </div>
+                </div>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -50,6 +71,10 @@
 					<tbody>
                         <?php
                             $data = $student->AllDataShow();
+                            if (isset($_GET['submit'])){
+                                $search = $_GET['search'];
+                                $data = $student->Search($search);
+                            }
                             $num = 1;
                             while ($row = $data->fetch_object()):
                         ?>

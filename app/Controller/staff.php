@@ -35,6 +35,12 @@ class Staff extends database{
         header('location:staff.php');
     }
 
+    /*
+     * Mini Search Box
+     */
+    public function Search($search){
+        return parent:: Like($search,'staff');
+    }
 
 
 

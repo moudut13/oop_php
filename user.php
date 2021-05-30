@@ -7,10 +7,22 @@
        $user->dataDelete($delete);
     }
 ?>
+
 	<div class="wrap-table shadow">
 		<div class="card">
 			<div class="card-body">
-				<h2>User Data</h2>
+				<h2 class="float-left">User Data</h2>
+                <!--Start Search Box-->
+                    <form class="form-inline float-right" action="" method="GET">
+                        <div class="form-group mx-sm-3">
+                            <input type="search" class="form-control" name="search" placeholder="Search" value="<?php if (isset($_GET['search'])){echo $_GET['search'];}?>">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Search" name="submit">
+                        </div>
+                    </form>
+                    <div class="clearfix"></div>
+                <!--End Search Box-->
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -25,6 +37,10 @@
 					<tbody>
                         <?php
                            $data = $user->AllDataShow();
+                            if (isset($_GET['submit'])){
+                                $search = $_GET['search'];
+                                $data = $user->Search($search);
+                            }
                            $num = 1;
                            while ($row = $data->fetch_object()):
                         ?>
